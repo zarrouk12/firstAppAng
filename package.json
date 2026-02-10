@@ -2,7 +2,7 @@
   "name": "first-app",
   "version": "0.0.0",
   "scripts": {
-    "json-server": "json-server --watch src/assets/db.json --port 3000 --id id",
+    "json-server": "json-server --watch src/assets/db.json --port 3000",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

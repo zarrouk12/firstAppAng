@@ -9,41 +9,40 @@
 
 <form class="member-form" [formGroup]="memberForm" (ngSubmit)="onSubmit()">
 	<div class="member-form__grid">
-		<label>
-			<span>CIN</span>
-			<input type="text" formControlName="cin" placeholder="ex: 123144155" />
-		</label>
+		<mat-form-field appearance="outline">
+			<mat-label>CIN</mat-label>
+			<input matInput type="text" formControlName="cin" placeholder="ex: 123144155" />
+		</mat-form-field>
 
-		<label>
-			<span>Nom</span>
-			<input type="text" formControlName="name" placeholder="ex: mawen" />
-		</label>
+		<mat-form-field appearance="outline">
+			<mat-label>Nom</mat-label>
+			<input matInput type="text" formControlName="name" placeholder="ex: mawen" />
+		</mat-form-field>
 
-		<label>
-			<span>Type</span>
-			<select formControlName="type">
-				<option value="" disabled>Choisir...</option>
-				<option value="student">student</option>
-				<option value="teacher">teacher</option>
-				<option value="staff">staff</option>
-			</select>
-		</label>
+		<mat-form-field appearance="outline">
+			<mat-label>Type</mat-label>
+			<mat-select formControlName="type">
+				<mat-option value="student">student</mat-option>
+				<mat-option value="teacher">teacher</mat-option>
+				<mat-option value="staff">staff</mat-option>
+			</mat-select>
+		</mat-form-field>
 
-		<label>
-			<span>CV</span>
-			<input type="text" formControlName="cv" placeholder="lien ou texte" />
-		</label>
+		<mat-form-field appearance="outline">
+			<mat-label>CV</mat-label>
+			<input matInput type="text" formControlName="cv" placeholder="lien ou texte" />
+		</mat-form-field>
 
-		<label>
-			<span>Date de création</span>
-			<input type="date" formControlName="createdDate" />
-		</label>
+		<mat-form-field appearance="outline">
+			<mat-label>Date de création</mat-label>
+			<input matInput type="date" formControlName="createdDate" />
+		</mat-form-field>
 	</div>
 
 	<div class="member-form__actions">
 		<button mat-raised-button color="primary" type="submit">
 			<mat-icon>check</mat-icon>
-			Enregistrer
+			Valider
 		</button>
 
 		<button mat-stroked-button type="button" (click)="onCancel()">
