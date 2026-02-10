@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { MemberFormComponent } from './member-form/member-form.component';
+import { MemberComponent } from './member/member.component';
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    component: MemberComponent,
+  },
+  {
+    path: 'create',
+    component: MemberFormComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

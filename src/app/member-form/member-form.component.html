@@ -1,0 +1,54 @@
+
+<div class="member-form__header">
+	<button mat-stroked-button type="button" routerLink="/">
+		<mat-icon>arrow_back</mat-icon>
+		Retour
+	</button>
+	<h2>Ajouter un membre</h2>
+</div>
+
+<form class="member-form" [formGroup]="memberForm" (ngSubmit)="onSubmit()">
+	<div class="member-form__grid">
+		<label>
+			<span>CIN</span>
+			<input type="text" formControlName="cin" placeholder="ex: 123144155" />
+		</label>
+
+		<label>
+			<span>Nom</span>
+			<input type="text" formControlName="name" placeholder="ex: mawen" />
+		</label>
+
+		<label>
+			<span>Type</span>
+			<select formControlName="type">
+				<option value="" disabled>Choisir...</option>
+				<option value="student">student</option>
+				<option value="teacher">teacher</option>
+				<option value="staff">staff</option>
+			</select>
+		</label>
+
+		<label>
+			<span>CV</span>
+			<input type="text" formControlName="cv" placeholder="lien ou texte" />
+		</label>
+
+		<label>
+			<span>Date de création</span>
+			<input type="date" formControlName="createdDate" />
+		</label>
+	</div>
+
+	<div class="member-form__actions">
+		<button mat-raised-button color="primary" type="submit">
+			<mat-icon>check</mat-icon>
+			Enregistrer
+		</button>
+
+		<button mat-stroked-button type="button" (click)="onCancel()">
+			<mat-icon>close</mat-icon>
+			Annuler
+		</button>
+	</div>
+</form>
