@@ -1,28 +1,117 @@
 {
   "members": [
     {
-      "id": 1,
-      "cin": "123144155",
-      "name": "marwen",
-      "type": "student",
-      "cv": "tayer barchaa",
-      "createdDate": "12/1/2026"
+      "id": "8c2e",
+      "ID": "",
+      "CIN": "2435",
+      "Name": "Adam",
+      "Type": "Engineer ",
+      "CV": "zk;ej",
+      "CreatedDate": ""
     },
     {
-      "id": 2,
-      "cin": "123144155",
-      "name": "hama",
-      "type": "student",
-      "cv": "tayer chwaya",
-      "createdDate": "2/3/2026"
+      "id": "d7d7",
+      "ID": "",
+      "CIN": "46839",
+      "Name": "Afra",
+      "Type": "CEO",
+      "CV": "0.0.0",
+      "CreatedDate": ""
     },
     {
-      "id": "f096",
-      "cin": "2225",
-      "name": "5120.",
-      "type": "student",
-      "cv": "iod<d",
-      "createdDate": "0020-05-15"
+      "id": "9d16",
+      "CIN": "36431",
+      "Name": "Khaled",
+      "Type": "Bataaal",
+      "CV": "435"
+    },
+    {
+      "id": "",
+      "ID": "",
+      "CIN": "asgzudk",
+      "Name": "karmousa",
+      "Type": "ozhaefo",
+      "CV": "3643",
+      "CreatedDate": ""
+    }
+  ],
+  "events": [
+    {
+      "id": "2",
+      "Titre": "Tech Conference 2026",
+      "DateDebut": "2026-06-15",
+      "DateFin": "2026-06-17",
+      "Lieu": "Sfax"
+    },
+    {
+      "id": "4",
+      "Titre": "Cybersecurity Forum",
+      "DateDebut": "2026-05-05",
+      "DateFin": "2026-05-06",
+      "Lieu": "Monastir"
+    },
+    {
+      "id": "5",
+      "Titre": "DevOps Days",
+      "DateDebut": "2026-07-01",
+      "DateFin": "2026-07-03",
+      "Lieu": "Bizerte"
+    },
+    {
+      "id": "7",
+      "Titre": "Hackathon Spring 2026",
+      "DateDebut": "2026-03-25",
+      "DateFin": "2026-03-27",
+      "Lieu": "Tunis"
+    },
+    {
+      "id": "8",
+      "Titre": "Web Development Masterclass",
+      "DateDebut": "2026-09-01",
+      "DateFin": "2026-09-05",
+      "Lieu": "Sfax"
+    },
+    {
+      "id": "9",
+      "Titre": "Data Science Workshop",
+      "DateDebut": "2026-10-12",
+      "DateFin": "2026-10-14",
+      "Lieu": "Gabès"
+    },
+    {
+      "id": "10",
+      "Titre": "Mobile App Development Day",
+      "DateDebut": "2026-11-08",
+      "DateFin": "2026-11-09",
+      "Lieu": "Kairouan"
+    },
+    {
+      "id": "11",
+      "Titre": "Open Source Conference",
+      "DateDebut": "2026-04-15",
+      "DateFin": "2026-04-16",
+      "Lieu": "Sousse"
+    },
+    {
+      "id": "12",
+      "Titre": "Blockchain & Web3 Summit",
+      "DateDebut": "2026-12-01",
+      "DateFin": "2026-12-03",
+      "Lieu": "Tunis"
+    },
+    {
+      "id": "7ba5",
+      "Titre": "AAA",
+      "DateDebut": "2030-11-11",
+      "DateFin": "2030-11-11",
+      "Lieu": "zz"
+    },
+    {
+      "id": "98b0",
+      "Titre": "zze",
+      "DateDebut": "2026-02-26T23:00:00.000Z",
+      "DateFin": "2026-02-27T23:00:00.000Z",
+      "Lieu": "aa"
     }
   ]
 }

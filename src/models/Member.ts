@@ -1,8 +1,9 @@
 export interface Member {
-  id?: string | number;
-  cin: string;
-  name: string;
-  type: string;
-  cv: string;
-  createdDate: string;
+    id?: string;  // json-server uses this for REST operations
+    ID: string;
+    CIN: string;
+    Name:  string;
+    Type: string;
+    CV: string;
+    CreatedDate: string;
 }

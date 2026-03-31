@@ -1,53 +1,20 @@
-
-<div class="member-form__header">
-	<button mat-stroked-button type="button" routerLink="/">
-		<mat-icon>arrow_back</mat-icon>
-		Retour
-	</button>
-	<h2>Ajouter un membre</h2>
-</div>
-
-<form class="member-form" [formGroup]="memberForm" (ngSubmit)="onSubmit()">
-	<div class="member-form__grid">
-		<mat-form-field appearance="outline">
-			<mat-label>CIN</mat-label>
-			<input matInput type="text" formControlName="cin" placeholder="ex: 123144155" />
-		</mat-form-field>
-
-		<mat-form-field appearance="outline">
-			<mat-label>Nom</mat-label>
-			<input matInput type="text" formControlName="name" placeholder="ex: mawen" />
-		</mat-form-field>
-
-		<mat-form-field appearance="outline">
-			<mat-label>Type</mat-label>
-			<mat-select formControlName="type">
-				<mat-option value="student">student</mat-option>
-				<mat-option value="teacher">teacher</mat-option>
-				<mat-option value="staff">staff</mat-option>
-			</mat-select>
-		</mat-form-field>
-
-		<mat-form-field appearance="outline">
-			<mat-label>CV</mat-label>
-			<input matInput type="text" formControlName="cv" placeholder="lien ou texte" />
-		</mat-form-field>
-
-		<mat-form-field appearance="outline">
-			<mat-label>Date de création</mat-label>
-			<input matInput type="date" formControlName="createdDate" />
-		</mat-form-field>
-	</div>
-
-	<div class="member-form__actions">
-		<button mat-raised-button color="primary" type="submit">
-			<mat-icon>check</mat-icon>
-			Valider
-		</button>
-
-		<button mat-stroked-button type="button" (click)="onCancel()">
-			<mat-icon>close</mat-icon>
-			Annuler
-		</button>
-	</div>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <h2>{{ editId ? 'Edit Member' : 'Create Member' }}</h2>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="CIN" formControlName="CIN">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Name" formControlName="Name">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Type" formControlName="Type">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="CV" formControlName="CV">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary">Submit</button>
 </form>

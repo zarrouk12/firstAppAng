@@ -5,7 +5,7 @@
   padding: 0 24px;
 }
 
-/* Toolbar: title + button */
+/* Toolbar */
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -18,20 +18,6 @@
   font-weight: 500;
   color: #333;
   margin: 0;
-}
-
-.toolbar button {
-  font-size: 14px;
-  padding: 0 20px;
-  height: 42px;
-  border-radius: 8px;
-}
-
-.toolbar button mat-icon {
-  margin-right: 6px;
-  font-size: 20px;
-  height: 20px;
-  width: 20px;
 }
 
 /* Table container */
@@ -79,33 +65,8 @@ tr.mat-row:nth-child(even):hover {
   background-color: #e8eaf6;
 }
 
-/* Type badge */
-.type-badge {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 16px;
-  background-color: #e8eaf6;
-  color: #3f51b5;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-/* CV link */
-.cv-link {
-  display: inline-flex;
-  align-items: center;
-  color: #3f51b5;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.cv-link:hover {
-  text-decoration: underline;
-}
-
-.cv-icon {
-  font-size: 18px;
-  height: 18px;
-  width: 18px;
-  margin-right: 4px;
+/* Action icons */
+td mat-icon {
+  cursor: pointer;
+  margin-right: 8px;
 }

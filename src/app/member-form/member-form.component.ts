@@ -1,48 +1,55 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Member } from 'src/models/Member';
-import { MembreService } from 'src/services/membre.service';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Member } from 'src/Models/Member';
+import { MemberService } from 'src/Services/member.service';
 
 @Component({
   selector: 'app-member-form',
   templateUrl: './member-form.component.html',
   styleUrls: ['./member-form.component.css']
 })
-export class MemberFormComponent {
-  @Output() saved = new EventEmitter<Member>();
-  @Output() cancelled = new EventEmitter<void>();
+export class MemberFormComponent implements OnInit {
+// declaration de la variable form
+form!: FormGroup;
+editId: string | null = null;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private membreService: MembreService,
-    private router: Router
-  ) {}
+constructor(
+  private memberService: MemberService,
+  private router: Router,
+  private route: ActivatedRoute
+) {}
 
-  memberForm = this.formBuilder.nonNullable.group({
-    cin: ['', Validators.required],
-    name: ['', Validators.required],
-    type: ['', Validators.required],
-    cv: [''],
-    createdDate: ['', Validators.required],
+// initialisation de la formulaire
+ngOnInit() {
+  this.form = new FormGroup({
+    id: new FormControl(''),
+    ID: new FormControl(''),
+    CIN: new FormControl(''),
+    Name: new FormControl(''),
+    Type: new FormControl(''),
+    CV: new FormControl(''),
+    CreatedDate: new FormControl('')
   });
 
-  onSubmit(): void {
-    if (this.memberForm.invalid) {
-      this.memberForm.markAllAsTouched();
-      return;
-    }
+  // Check if we are in edit mode
+  this.editId = this.route.snapshot.paramMap.get('id');
+  if (this.editId) {
+    this.memberService.getMemberById(this.editId).subscribe((member) => {
+      this.form.patchValue(member);
+    });
+  }
+}
 
-    const member = this.memberForm.getRawValue();
-    this.membreService.AddMember(member).subscribe((created) => {
-      this.saved.emit(created);
+submit(): void {
+  if (this.editId) {
+    this.memberService.updateMember(this.form.value).subscribe(() => {
+      this.router.navigate(['/']);
+    });
+  } else {
+    this.memberService.postMember(this.form.value).subscribe(() => {
       this.router.navigate(['/']);
     });
   }
-
-  onCancel(): void {
-    this.cancelled.emit();
-    this.router.navigate(['/']);
-  }
-
+}
 }
