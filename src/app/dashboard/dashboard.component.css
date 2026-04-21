@@ -1,0 +1,54 @@
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap; 
+}
+
+.dashboard-card {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Title styling */
+mat-card-title {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Number styling */
+mat-card-subtitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #3f51b5; /* Angular Material primary color */
+}
+
+.charts-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* responsive */
+}
+
+.chart-wrapper {
+  width: 400px;
+  height: 350px;
+}
+
+/* Ensure canvas fits container */
+.chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

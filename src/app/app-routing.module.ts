@@ -7,21 +7,21 @@ import { EventComponent } from './event/event.component';
 import { ArticleComponent } from './article/article.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateEvtComponent } from './create-evt/create-evt.component';
-import { LocationStrategy } from '@angular/common';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path: 'create', component: MemberFormComponent},
-  {path: 'edit/:id', component: MemberFormComponent},
-  {path: 'create-event', component: CreateEvtComponent},
-  {path: 'edit-event/:id', component: CreateEvtComponent},
-  {path: 'member', component: MemberComponent},
-  {path: 'tools', component: ToolComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'events', component: EventComponent},
-  {path: 'articles', component: ArticleComponent},
+  {path: 'create', component: MemberFormComponent, canActivate: [AuthGuard]},
+  {path: 'edit/:id', component: MemberFormComponent, canActivate: [AuthGuard]},
+  {path: 'create-event', component: CreateEvtComponent, canActivate: [AuthGuard]},
+  {path: 'edit-event/:id', component: CreateEvtComponent, canActivate: [AuthGuard]},
+  {path: 'member', component: MemberComponent, canActivate: [AuthGuard]},
+  {path: 'tools', component: ToolComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'events', component: EventComponent, canActivate: [AuthGuard]},
+  {path: 'articles', component: ArticleComponent, canActivate: [AuthGuard]},
   {path: '',component:LoginComponent},
-  {path: '**', component: MemberComponent}
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({

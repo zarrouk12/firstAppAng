@@ -10,7 +10,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-
+import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MemberComponent } from './member/member.component';
@@ -34,6 +34,9 @@ import { ToolComponent } from './tool/tool.component';
 import { CreateEvtComponent } from './create-evt/create-evt.component';
 import { firebaseConfig } from './environment';
 import { LoginComponent } from './login/login.component';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartDataset, ChartOptions } from 'chart.js';
+
 
 @NgModule({
   declarations: [
@@ -72,7 +75,10 @@ import { LoginComponent } from './login/login.component';
     MatNativeDateModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatCardModule,
+    NgChartsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

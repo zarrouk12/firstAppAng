@@ -1,1 +1,50 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+  <mat-card class="dashboard-card">
+    <mat-card-title>NbMembers</mat-card-title>
+    <mat-card-subtitle>{{ NbMembers }}</mat-card-subtitle>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <mat-card-title>NbEvents</mat-card-title>
+    <mat-card-subtitle>{{ NbEvents }}</mat-card-subtitle>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <mat-card-title>NbTools</mat-card-title>
+    <mat-card-subtitle>{{ NbTools }}</mat-card-subtitle>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <mat-card-title>NbArticles</mat-card-title>
+    <mat-card-subtitle>{{ NbArticles }}</mat-card-subtitle>
+  </mat-card>
+</div>
+
+<div class="charts-container">
+  <div class="chart-wrapper">
+    <canvas baseChart
+            [type]="'doughnut'"
+            [datasets]="chartDataDoughnut"
+            [labels]="chartLabelsDoughnut"
+            [options]="chartOptionsDoughnut">
+    </canvas>
+  </div>
+
+  <div class="chart-wrapper">
+    <canvas baseChart
+            [type]="'pie'"
+            [datasets]="chartDataPie"
+            [labels]="chartLabelsPie"
+            [options]="chartOptionsPie">
+    </canvas>
+  </div>
+
+  <div class="chart-wrapper">
+    <canvas baseChart
+            [type]="'line'"
+            [datasets]="chartDataLine"
+            [labels]="chartLabelsLine"
+            [options]="chartOptionsLine">
+    </canvas>
+  </div>
+</div>

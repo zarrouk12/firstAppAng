@@ -1,9 +1,29 @@
-<form (ngSubmit)="onSubmit()">
-<mat-form-field appearance="fill">
-  <input matInput placeholder="email" [(ngModel)]="username" name="email">
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <input matInput placeholder="password" [(ngModel)]="password" name="password" type="password">
-</mat-form-field>
-<button type="submit">Submit</button>
-</form>
+<section class="login-page">
+  <div class="backdrop-shape shape-a"></div>
+  <div class="backdrop-shape shape-b"></div>
+
+  <div class="login-shell">
+    <div class="brand-panel">
+      <p class="eyebrow">Welcome Back</p>
+      <h1>Lab Portal</h1>
+      <p class="tagline">Connect to your workspace, manage members and events, and keep your lab flow in one place.</p>
+    </div>
+
+    <form class="login-card" (ngSubmit)="login()">
+      <h2>Sign In</h2>
+      <p class="subtitle">Use your account credentials to continue</p>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="email" name="email" autocomplete="email" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password" name="password" autocomplete="current-password" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Sign In</button>
+    </form>
+  </div>
+</section>
